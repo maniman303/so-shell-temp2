@@ -208,7 +208,7 @@ bool killjob(int j) {
 #ifdef STUDENT
   // W skrócie podwójne użycie SIGTERM jest potrzebne, aby shell przeszedł testy
   // i lokalnie i w github actions
-  // kill(-jobs[j].pgid, SIGTERM);
+  kill(-jobs[j].pgid, SIGTERM);
   kill(-jobs[j].pgid, SIGCONT);
   kill(-jobs[j].pgid, SIGTERM);
 #endif /* !STUDENT */
